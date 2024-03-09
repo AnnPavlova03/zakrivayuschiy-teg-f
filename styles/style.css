@@ -244,19 +244,7 @@
   mix-blend-mode: difference;
 }
 
-.card__like-button:hover {
-  cursor: url(../svg/pointer.svg), pointer;
-}
-
-.button_wrapper:hover {
-  cursor: url(../svg/pointer.svg), pointer;
-}
-
-.card__icon-button:hover {
-  cursor: url(../svg/pointer.svg), pointer;
-}
-
-.button__close:hover {
+.button:hover {
   cursor: url(../svg/pointer.svg), pointer;
 }
 
@@ -274,6 +262,11 @@
 }
 
 .button_wrapper:focus-visible {
+  box-shadow: 2px 2px var(--color);
+  transition: box-shadow 0.3s;
+}
+
+.button__close:focus-visible{
   box-shadow: 2px 2px var(--color);
   transition: box-shadow 0.3s;
 }
@@ -300,11 +293,26 @@
   inset: 0;
 }
 
+.button__close::before {
+  content: "";
+  display: block;
+  background-color: var(--color);
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: 0;
+  position: absolute;
+  inset: 0;
+}
+
 .card__like-button:hover::before {
   transform: scaleX(1);
 }
 
 .button_wrapper:hover::before {
+  transform: scaleX(1);
+}
+
+.button__close:hover::before {
   transform: scaleX(1);
 }
 
@@ -358,6 +366,7 @@
   height: 38px;
   align-self: end;
   text-transform: uppercase;
+  position: relative;
 }
 
 @media (width <= 375px) {
