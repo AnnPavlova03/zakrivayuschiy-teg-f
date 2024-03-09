@@ -19,13 +19,8 @@
   min-block-size: 100dvb;
   font-family: var(--font-family);
   font-variation-settings: "wght" var(--weight-text);
-  background-color: var(--bg-color);
+  background: var(--bg-image) fixed no-repeat center / cover;
   color: var(--color);
-  background-image: var(--bg-image);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   margin-block: 100px 103px;
 }
 
@@ -102,7 +97,11 @@
   transform: scaleX(1);
 }
 
-.theme-menu__button:focus-visible,
+.theme-menu__button:focus-visible {
+  transition: color 0.3s;
+  color: var(--color-animation);
+  cursor: url(../svg/pointer.svg), pointer;
+}
 .theme-menu__button:hover {
   transition: color 0.3s;
   color: var(--color-animation);
@@ -199,12 +198,15 @@
 .card {
   border-top: var(--border);
   display: grid;
-  gap: 27px;
+  gap: 25px;
   padding: 25px;
 }
 
 .content__paragraph {
   font-size: 18px;
+}
+.content__paragraph:first-child {
+  padding-block-end: 2px;
 }
 
 .button {
@@ -217,7 +219,6 @@
   display: flex;
   gap: 4px;
   justify-content: end;
-  margin-block-start: -2px;
   height: 38px;
 }
 
@@ -243,25 +244,51 @@
   mix-blend-mode: difference;
 }
 
-.card__like-button:hover,
-.button_wrapper:hover,
-.card__icon-button:hover,
+.card__like-button:hover {
+  cursor: url(../svg/pointer.svg), pointer;
+}
+
+.button_wrapper:hover {
+  cursor: url(../svg/pointer.svg), pointer;
+}
+
+.card__icon-button:hover {
+  cursor: url(../svg/pointer.svg), pointer;
+}
+
 .button__close:hover {
   cursor: url(../svg/pointer.svg), pointer;
 }
 
-.button:focus,
+.button:focus {
+  outline: none;
+}
+
 .theme-menu__button:focus {
   outline: none;
 }
 
-.card__like-button:focus-visible,
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px var(--color);
+  transition: box-shadow 0.3s;
+}
+
 .button_wrapper:focus-visible {
   box-shadow: 2px 2px var(--color);
   transition: box-shadow 0.3s;
 }
 
-.card__like-button::before,
+.card__like-button::before {
+  content: "";
+  display: block;
+  background-color: var(--color);
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: 0;
+  position: absolute;
+  inset: 0;
+}
+
 .button_wrapper::before {
   content: "";
   display: block;
@@ -273,7 +300,10 @@
   inset: 0;
 }
 
-.card__like-button:hover::before,
+.card__like-button:hover::before {
+  transform: scaleX(1);
+}
+
 .button_wrapper:hover::before {
   transform: scaleX(1);
 }

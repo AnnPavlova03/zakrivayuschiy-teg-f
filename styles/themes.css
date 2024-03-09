@@ -11,14 +11,12 @@
   --weight-text-title: 785;
   --weight-text: 465;
   --color: #00cc14;
-  --bg-image: repeating-linear-gradient(#000, rgb(211 211 211 / 0) 2px),
-    repeating-linear-gradient(90deg, #000, rgb(211 211 211 / 0) 2px),
-    repeating-linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
+  --bg-image: repeating-linear-gradient(#000 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(90deg, #000 0px 2px, transparent 2px 4px),
+    linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
   --text-shadow: rgb(0 0 0);
   --color-animation: rgb(0 204 20 / 60%);
   --text-animation: #00cc14;
-  --sparks: rgb(255 0 0);
-  --border: 2px solid var(--color);
 }
 
 :root.theme-light {
@@ -27,14 +25,12 @@
   --weight-text-title: 700;
   --weight-text: 400;
   --color: #000000;
-  --bg-image: repeating-linear-gradient(#d3d3d3, rgb(211 211 211 / 0) 2px),
-    repeating-linear-gradient(90deg, #d3d3d3, rgb(211 211 211 / 0) 2px),
-    repeating-linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
+  --bg-image: repeating-linear-gradient(#d3d3d3 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(90deg, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
   --text-shadow: rgb(255 255 255);
   --color-animation: rgb(0 0 0 / 60%);
   --text-animation: #ffffff;
-  --sparks: rgb(255 0 0);
-  --border: 2px solid var(--color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,13 +40,11 @@
     --weight-text-title: 785;
     --weight-text: 465;
     --color: #00cc14;
-    --bg-image: repeating-linear-gradient(#000, rgb(211 211 211 / 0) 2px),
-      repeating-linear-gradient(90deg, #000, rgb(211 211 211 / 0) 2px),
-      repeating-linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
+    --bg-image: repeating-linear-gradient(#000 0px 2px, transparent 2px 4px),
+      repeating-linear-gradient(90deg, #000 0px 2px, transparent 2px 4px),
+      linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
     --text-shadow: rgb(0 0 0);
     --color-animation: rgb(0 204 20 / 60%);
     --text-animation: #00cc14;
-    --sparks: rgb(255 0 0);
-    --border: 2px solid var(--color);
   }
 }
